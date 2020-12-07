@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Working Time Chart</title>
+    <link rel="stylesheet" href="./static/css/main.css">
+</head>
+<body>
+<div id="vue">
+    <h2>Input your working time</h2>
+    <div class="mb-20">
+        <div class="table-container">
+            <table class="table table-bordered">
+                <tr>
+                    <td><div class="cell text-center" style="height: 80px;">Project Name</div></td>
+                </tr>
+                <tr v-for="item in projectList">
+                    <th>
+                        <div class="cell">
+                            <input type="text" v-model="item.project_name" />
+                        </div>
+                    </th>
+                </tr>
+            </table>
+            <div class="week-table-container">
+                <table id="week-table" class="table table-bordered">
+                    <tr>
+                        <td v-for="item in weekList" style="height: 80px;">
+                            <div class="cell text-center">
+                                <div class="font-18 mb-20">Week {{ item.week_no + 1 }}</div>
+                                <div class="font-12">{{ item.start_date }} ~ {{ item.end_date }}</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr v-for="item in projectList">
+                        <th v-for="data in item.data_list">
+                            <div class="cell">
+                                <input type="text" v-model="data.v"></input>
+                            </div>
+
+                        </th>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <button @click="addProject">Add Project</button>
+        <button @click="createChart">Create chart</button>
+    </div>
+
+
+    <h2>Chart</h2>
+    <div id="chart">
+        <div class="line" v-for="item in chartData">
+            <div class="item" v-for="data in item.data_list" :style="'background-color: ' + data.bg_color"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="./static/js/main.js"></script>
+</html>

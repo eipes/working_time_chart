@@ -1,0 +1,70 @@
+.table {
+    border-collapse: collapse !important;
+}
+.table td,
+.table th {
+    background-color: #fff;
+}
+
+.table tr:hover, .table th:hover, .table td:hover {
+    background-color: #eee !important;
+}
+
+.table-bordered {
+    border: 1px solid #ddd
+}
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #ddd
+}
+
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
+    border-bottom-width: 2px
+}
+
+.table .cell {
+    width: 200px;
+    min-height: 40px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+#chart {
+
+}
+
+#chart .line {
+    display: flex;
+    margin-bottom: 4px;
+}
+
+#chart .line .item {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 4px;
+    background-color: rgb(237, 237, 237);
+}
+
+.table-container {
+    display: flex;
+}
+
+.week-table-container {
+    max-width: 1600px;
+    overflow-x: auto;
+}
